@@ -1,0 +1,57 @@
+ @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+.body{
+    background-image: url(./image/a1.webp);
+    display: grid;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#welcome {
+    font-weight: 700;
+    padding-left: 35rem;
+    font-family: Arial, Helvetica, sans-serif;
+color: rgb(242, 8, 133);
+
+}
+.form{
+    align-items: center;
+
+}
+.login-btn{
+    font-weight: 500px;
+    color: brown;
+}
+#body-main{
+    background-color: bisque;
+}
+.logout{
+    font-weight: 300px;
+    color: rgb(212, 53, 53);
+}
+
+.list-container {
+    margin-top: 5em;
+    color:rgb(84, 5, 10);
+}
+.todoItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* .check {
+    display: flex;
+  }
+  
+  label {
+        font-size: 14px;
+    color: #333;
+  } 
