@@ -34,24 +34,7 @@ color: rgb(242, 8, 133);
     color:rgb(84, 5, 10);
 }
 .todoItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ccc;
   }
-  
-  .checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  /* .check {
-    display: flex;
-  }
-  
-  label {
-        font-size: 14px;
-    color: #333;
-  } 
+ 

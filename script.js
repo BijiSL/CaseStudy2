@@ -12,15 +12,12 @@ window.addEventListener("load", () => {
     fetchAPI()
     .then((data) => {
         data.forEach((element, index) => {
-            const todoItem = document.createElement('body');
+            const todoItem = document.createElement('div');
             todoItem.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'todoItem');
 
-            const taskDesc = document.createElement('b');
+            const taskDesc = document.createElement('p');
             taskDesc.classList.add('mb-0');
             taskDesc.textContent = element.title;
-
-            const checkboxContainer = document.createElement('div');
-            checkboxContainer.classList.add('d-flex', 'align-items-right', 'checkbox-container');
 
             const checkBox = document.createElement('input');
             checkBox.type = 'checkbox';
@@ -29,13 +26,10 @@ window.addEventListener("load", () => {
             checkBox.autocomplete = 'off';
 
             const label = document.createElement('label');
-            label.classList.add('checkbox', 'checkboxes');
-            label.setAttribute('for',`check${element.id}`);
-           
+                       
             todoItem.appendChild(taskDesc);
             todoItem.appendChild(checkBox);
-            todoItem.appendChild(label);
-            todoItem.appendChild(checkboxContainer);
+            console.log(todoItem);
             list.appendChild(todoItem);
 
             checkBox.addEventListener('change', function() {
@@ -55,8 +49,6 @@ window.addEventListener("load", () => {
             
             todoItem.appendChild(taskDesc);
             todoItem.appendChild(checkBox);
-            todoItem.appendChild(label);
-            todoItem.appendChild(checkboxContainer);
             list.appendChild(todoItem);
         });
     })
@@ -69,7 +61,7 @@ function fetchAPI() {
     return fetch(url)
     .then((reponse) => {
         if(!reponse.ok){
-            throw new Error('Error fetching details, please reload!');
+            throw new Error('Please reload!');
                     }
         return reponse.json();
     })
@@ -78,20 +70,20 @@ function toggleCheckboxes() {
     const checkboxes = document.querySelectorAll('.check');
     checkboxes.forEach(checkbox => {
         if (selectedCount >= MAX_SELECTION && !checkbox.checked) {
-            checkbox.disabled = true; // Disable unchecked checkboxes if limit is reached
+            checkbox.disabled = true; 
         } else {
-            checkbox.disabled = false; // Re-enable checkboxes if limit is not reached
+            checkbox.disabled = false; 
         }
     });
 }
 
-// Function to handle the selection limit promise
+
 function checkSelectionLimit() {
     return new Promise((resolve, reject) => {
         if (selectedCount === MAX_SELECTION) {
             resolve();
         }
     }).then(message => {
- alert(' 5 tasks have been successfully completed.'); // Show alert when the promise resolves (5 tasks completed)
+ alert(' 5 tasks have been successfully completed.');
     });
 }
